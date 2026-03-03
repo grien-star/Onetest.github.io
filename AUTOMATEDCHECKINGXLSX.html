@@ -744,38 +744,10 @@
                 subject,q1,q2,q3,q4,final<br/>
                 English,88,90,89,91,90
               </p>
-            </div>
-          </article>
-
-          <article class="panel" id="notes">
-            <div class="inner">
-              <h3>Important note</h3>
-              <p>
-                Because you requested a single-file site and external URLs are disallowed, a real XLSX parser cannot be loaded from a CDN here.
-                In production, you would bundle an XLSX parser (like SheetJS) into your app build and it will work seamlessly.
-              </p>
-              <div class="rule"></div>
-              <p style="margin:0; color:rgba(17,17,22,.68); font-size:.95rem;">
-                If you want, I can provide a version that includes the parser as an embedded minified script (large file), or provide a build-ready setup (Vite/Webpack) that bundles it.
-              </p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap foot">
-      <div>
-        <strong style="font-family:Fraunces, serif; letter-spacing:-0.02em;">GradeVerify</strong>
-        <small>
-          Front-end prototype for automated grade verification. For real .xlsx import, bundle an XLSX parser during build.
-        </small>
-      </div>
-    </div>
-  </footer>
-
   <script>
     const $ = (sel, root=document) => root.querySelector(sel);
 
@@ -1412,19 +1384,7 @@ EPP/TLE, 86`
     document.querySelectorAll(".sr").forEach(el=> io.observe(el));
   </script>
 
-  <!--
-    XLSX PARSING NOTE (IMPORTANT):
-    This single-file website cannot truly parse .xlsx without an XLSX parser library.
-    External URLs are disallowed per requirements, so we cannot load SheetJS from a CDN.
 
-    To make XLSX import work:
-      1) Use a build step (Vite/Webpack/Rollup) to bundle SheetJS:
-         - npm i xlsx
-         - import * as XLSX from "xlsx"
-         - expose it as window.XLSX or refactor code to use the imported XLSX
-      2) OR embed a minified XLSX parser script directly into this HTML (very large).
-
-    The UI, event hooks, and conversion logic are already implemented above and will begin working automatically once window.XLSX exists.
-  -->
 </body>
+
 </html>
